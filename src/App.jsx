@@ -4,6 +4,7 @@ import Footer from './components/Footer/Footer'
 import Home from './components/Home/Home'
 import Login from './components/Login/Login';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './styles/main.scss';
 
 const App = () => {
   return (
