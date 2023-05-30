@@ -1,43 +1,39 @@
 import React from 'react';
-import { ReactComponent as Enviar } from '../../Assets/enviar.svg';
-import useFetch from '../../Hooks/useFetch';
-import Error from '../Helper/Error';
-import { COMMENT_POST } from '../../Api';
-import styles from './PhotoCommentsForm.module.css';
+import { UserContext } from '../../UserContext';
+import PhotoCommentsForm from './PhotoCommentsForm';
+import styles from './PhotoComments.module.css';
 
-const PhotoCommentsForm = ({ id, setComments, single }) => {
-  const [comment, setComment] = React.useState('');
-  const { request, error } = useFetch();
+const PhotoComments = (props) => {
+  const [comments, setComments] = React.useState(() => props.comments);
+  const commentsSection = React.useRef(null);
+  const { login } = React.useContext(UserContext);
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-    const { url, options } = COMMENT_POST(id, { comment });
-    const { response, json } = await request(url, options);
-    if (response.ok) {
-      setComment('');
-      setComments((comments) => [...comments, json]);
-    }
-  }
+  React.useEffect(() => {
+    commentsSection.current.scrollTop = commentsSection.current.scrollHeight;
+  }, [comments]);
 
   return (
-    <form
-      className={`${styles.form} ${single ? styles.single : ''}`}
-      onSubmit={handleSubmit}
-    >
-      <textarea
-        className={styles.textarea}
-        id="comment"
-        name="comment"
-        placeholder="Comente..."
-        value={comment}
-        onChange={({ target }) => setComment(target.value)}
-      />
-      <button className={styles.button}>
-        <Enviar />
-      </button>
-      <Error error={error} />
-    </form>
+    <>
+      <ul
+        ref={commentsSection}
+        className={`${styles.comments} ${props.single ? styles.single : ''}`}
+      >
+        {comments.map((comment) => (
+          <li key={comment.comment_ID}>
+            <b>{comment.comment_author}: </b>
+            <span>{comment.comment_content}</span>
+          </li>
+        ))}
+      </ul>
+      {login && (
+        <PhotoCommentsForm
+          single={props.single}
+          id={props.id}
+          setComments={setComments}
+        />
+      )}
+    </>
   );
 };
 
-export default PhotoCommentsForm;
+export default PhotoComments;
