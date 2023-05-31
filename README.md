@@ -74,7 +74,7 @@ Antes de começar :checkered_flag:, você precisa ter o [Git](https://git-scm.co
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/thiagonmiziara/dogs
+$ git clone
 
 # Entre na pasta
 $ cd dogs
