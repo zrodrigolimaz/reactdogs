@@ -49,14 +49,15 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 
 - [React Js](https://pt-br.reactjs.org/)
-- React Router
-- Sass 
-- Victory
+- [React Router](https://reactrouter.com/en/main)
+- [Victory](https://github.com/FormidableLabs/victory)
+- [Sass](https://sass-lang.com/) New
+- [i18next internationalization PTBR/EN](https://www.i18next.com/) New
 
 
 ## :white_check_mark: Pré requisitos ##
 
-Antes de começar :checkered_flag:, você precisa ter o [Git](https://git-scm.com) e o [Node](https://nodejs.org/en/) instalados em sua maquina.
+Antes de começar :checkered_flag:, você precisa ter o [Git](https://git-scm.com) e o [Node](https://nodejs.org/en/) e a versão mais recente do yarn instalados em sua maquina.
 
 ## :checkered_flag: Começando ##
 
