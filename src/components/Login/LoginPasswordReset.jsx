@@ -1,4 +1,4 @@
-import React from 'react';
+import {useState, useEffect} from 'react';
 import Input from '../Forms/Input';
 import Button from '../Forms/Button';
 import useForm from '../../Hooks/useForm';
@@ -9,13 +9,13 @@ import { useNavigate } from 'react-router-dom';
 import Head from '../Helper/Head';
 
 const LoginPasswordReset = () => {
-  const [login, setLogin] = React.useState('');
-  const [key, setKey] = React.useState('');
+  const [login, setLogin] = useState('');
+  const [key, setKey] = useState('');
   const password = useForm();
   const { error, loading, request } = useFetch();
   const navigate = useNavigate();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const key = params.get('key');
     const login = params.get('login');

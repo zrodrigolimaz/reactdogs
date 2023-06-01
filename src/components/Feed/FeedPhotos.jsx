@@ -1,4 +1,4 @@
-import React from 'react';
+import {useEffect} from 'react';
 import FeedPhotosItem from './FeedPhotosItem';
 import useFetch from '../../Hooks/useFetch';
 import { PHOTOS_GET } from '../../Api';
@@ -9,7 +9,7 @@ import styles from './FeedPhotos.module.css';
 const FeedPhotos = ({ page, user, setModalPhoto, setInfinite }) => {
   const { data, loading, error, request } = useFetch();
 
-  React.useEffect(() => {
+  useEffect(() => {
     async function fetchPhotos() {
       const total = 3;
       const { url, options } = PHOTOS_GET({ page, total, user });

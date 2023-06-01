@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './PhotoDelete.module.css';
 import { PHOTO_DELETE } from '../../Api';
 import useFetch from '../../Hooks/useFetch';

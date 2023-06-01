@@ -1,4 +1,4 @@
-import React from 'react';
+import {useContext} from 'react';
 import { Link } from 'react-router-dom';
 import Input from '../Forms/Input';
 import Button from '../Forms/Button';
@@ -13,7 +13,7 @@ const LoginForm = () => {
   const username = useForm();
   const password = useForm();
 
-  const { userLogin, error, loading } = React.useContext(UserContext);
+  const { userLogin, error, loading } = useContext(UserContext);
 
   async function handleSubmit(event) {
     event.preventDefault();

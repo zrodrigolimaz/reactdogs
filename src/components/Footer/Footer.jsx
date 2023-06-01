@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './Footer.module.scss';
 import { ReactComponent as Dogs } from '../../Assets/dogs-footer.svg';
 

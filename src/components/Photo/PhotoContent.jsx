@@ -1,4 +1,4 @@
-import React from 'react';
+import {useContext} from 'react';
 import styles from './PhotoContent.module.css';
 import { Link } from 'react-router-dom';
 import PhotoComments from './PhotoComments';
@@ -7,7 +7,7 @@ import PhotoDelete from './PhotoDelete';
 import Image from '../Helper/Image';
 
 const PhotoContent = ({ data, single }) => {
-  const user = React.useContext(UserContext);
+  const user = useContext(UserContext);
   const { photo, comments } = data;
 
   return (
