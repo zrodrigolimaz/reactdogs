@@ -1,13 +1,8 @@
-<div align="center" id="top"> 
-  <img src="./dogs/public/gif.gif" alt="Dogs" />
-
-  &#xa0;
-
-  <a href="https://dogs.rodrigolima.tech">Demo</a>
-</div>
-
 <h1 align="center">Dogs</h1>
 <img src='./screenshot.png' style='border-radius: .4rem; width:800px; margin: 0 15rem' />
+<div align="center" id="top"> 
+  <a href="https://dogs.rodrigolima.tech">Demo</a>
+</div>
 
 <p align="center">
   <img alt="Principal linguagem do projeto" src="https://img.shields.io/github/languages/top/thiagonmiziara/dogs?color=56BEB8">
