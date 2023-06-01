@@ -1,4 +1,4 @@
-import {useContext} from 'react';
+import { useContext } from 'react';
 import styles from './PhotoContent.module.css';
 import { Link } from 'react-router-dom';
 import PhotoComments from './PhotoComments';
@@ -30,7 +30,9 @@ const PhotoContent = ({ data, single }) => {
           </h1>
           <ul className={styles.attributes}>
             <li>{photo.peso} kg</li>
-            <li>{photo.idade} anos</li>
+            <li>
+              {photo.idade} {photo.idade == 1 ? 'ano' : 'anos'}
+            </li>
           </ul>
         </div>
       </div>
