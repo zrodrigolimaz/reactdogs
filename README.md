@@ -33,14 +33,16 @@
   <a href="#white_check_mark-pré-requesitos">Pré requisitos</a>  | 
   <a href="#checkered_flag-começando">Começando</a>  | 
   <a href="#memo-licença">Licença</a>  | 
-  <a href="https://github.com/thiagonmiziara" target="_blank">Autor</a>
+  <a href="https://github.com/zrodrigolimaz" target="_blank">Autor</a>
 </p>
 
 <br>
 
 ## :dart: Sobre ##
 
-"Dogs" é uma plataforma  como uma rede social exclusiva para amantes de pets. Compartilhe fotos, interaja com outros usuários
+Dogs é uma aplicação frontend construída em React, utilizando várias funcionalidades, incluindo React Hooks, React Router e custom hooks
+
+Com a integração de uma API REST, ela permite que os usuários compartilhem e explorem fotos de cachorros de forma interativa e moderna, proporcionando uma experiência única e cativante.
 
 ## :sparkles: Funcionalidades ##
 
@@ -58,7 +60,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - [React Js](https://pt-br.reactjs.org/)
 - React Router
-  Sass
+  Sass 
   Victory
 
 
