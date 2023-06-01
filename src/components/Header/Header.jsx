@@ -1,11 +1,11 @@
-import React from 'react';
+import {useContext} from 'react';
 import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Dogs } from '../../Assets/dogs.svg';
 import { UserContext } from '../../UserContext';
 
 const Header = () => {
-  const { data } = React.useContext(UserContext);
+  const { data } = useContext(UserContext);
 
   return (
     <header className={styles.header}>

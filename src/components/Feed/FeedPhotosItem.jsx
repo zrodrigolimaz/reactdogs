@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './FeedPhotosItem.module.css';
 
 const FeedPhotosItem = ({ photo, setModalPhoto }) => {

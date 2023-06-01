@@ -1,13 +1,13 @@
-import React from 'react';
+import {useEffect, useState} from 'react';
 import FeedModal from './FeedModal';
 import FeedPhotos from './FeedPhotos';
 
 const Feed = ({ user }) => {
-  const [modalPhoto, setModalPhoto] = React.useState(null);
-  const [pages, setPages] = React.useState([1]);
-  const [infinite, setInfinite] = React.useState(true);
+  const [modalPhoto, setModalPhoto] = useState(null);
+  const [pages, setPages] = useState([1]);
+  const [infinite, setInfinite] = useState(true);
 
-  React.useEffect(() => {
+  useEffect(() => {
     let wait = false;
     function infiniteScroll() {
       if (infinite) {
