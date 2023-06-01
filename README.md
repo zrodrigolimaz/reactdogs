@@ -2,8 +2,9 @@
   <img src="./dogs/public/gif.gif" alt="Dogs" />
 
   &#xa0;
+<img src='./screenshot.png' style='border-radius: .4rem; width:800px; margin: 0 15rem' />
 
-  <!-- <a href="https://dogs.rodrigolima.tech">Demo</a> -->
+  <a href="https://dogs.rodrigolima.tech">Demo</a>
 </div>
 
 <h1 align="center">Dogs</h1>
@@ -17,11 +18,6 @@
 
   <img alt="Licença" src="https://img.shields.io/github/license/thiagonmiziara/dogs?color=56BEB8">
 
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/thiagonmiziara/dogs?color=56BEB8" /> -->
-
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/thiagonmiziara/dogs?color=56BEB8" /> -->
-
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/thiagonmiziara/dogs?color=56BEB8" /> -->
 </p>
 
 <!-- Status -->
@@ -31,12 +27,12 @@
 <hr>
 
 <p align="center">
-  <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0; 
-  <a href="#sparkles-funcionalidades">Funcionalidades</a> &#xa0; | &#xa0;
-  <a href="#rocket-tecnologias">Tecnologias</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-pré-requesitos">Pré requisitos</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-começando">Começando</a> &#xa0; | &#xa0;
-  <a href="#memo-licença">Licença</a> &#xa0; | &#xa0;
+  <a href="#dart-sobre">Sobre</a> 
+  <a href="#sparkles-funcionalidades">Funcionalidades</a>  | 
+  <a href="#rocket-tecnologias">Tecnologias</a>  | 
+  <a href="#white_check_mark-pré-requesitos">Pré requisitos</a>  | 
+  <a href="#checkered_flag-começando">Começando</a>  | 
+  <a href="#memo-licença">Licença</a>  | 
   <a href="https://github.com/thiagonmiziara" target="_blank">Autor</a>
 </p>
 
