@@ -21,7 +21,7 @@ const UserHeader = () => {
       default:
         setTitle(t('myAccount'));
     }
-  }, [location]);
+  }, [location, t]);
 
   return (
     <header className={styles.header}>

@@ -20,8 +20,6 @@ const App = () => {
       <BrowserRouter>
         <UserStorage>
           <Header />
-          <LanguageSelector />
-
           <main className="AppBody">
             <Routes>
               <Route path="/" element={<Home />} />

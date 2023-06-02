@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const types = {
@@ -19,19 +19,26 @@ const useForm = (type) => {
   const [error, setError] = useState(null);
   const emailError = t(types.email.message);
 
-  function validate(value) {
-    if (type === false) return true;
-    if (value.length === 0) {
-      setError(t('errorValue'));
-      return false;
-    } else if (types[type] && !types[type].regex.test(value)) {
-      setError(t(types[type].message));
-      return false;
-    } else {
-      setError(null);
-      return true;
-    }
-  }
+  const validate = useCallback(
+    (value) => {
+      if (type === false) return true;
+      if (value.length === 0) {
+        setError(t('errorValue'));
+        return false;
+      } else if (types[type] && !types[type].regex.test(value)) {
+        setError(t(types[type].message));
+        return false;
+      } else {
+        setError(null);
+        return true;
+      }
+    },
+    [t, type],
+  );
+
+  useEffect(() => {
+    validate(value);
+  }, [t, validate, value]);
 
   function onChange({ target }) {
     if (error) validate(target.value);
