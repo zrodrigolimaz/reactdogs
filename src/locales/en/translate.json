@@ -29,7 +29,7 @@
   "age": "Age*",
   "send": "Send",
 
-  "uploadImage": "Upload Image*",
+  "uploadImage": "Upload Image",
 
   "comment...": "Comment...",
   "delete": "Delete"
