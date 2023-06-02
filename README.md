@@ -52,7 +52,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [React Router](https://reactrouter.com/en/main)
 - [Victory](https://github.com/FormidableLabs/victory)
 - [Sass](https://sass-lang.com/) New
-- [i18next internationalization PTBR/EN](https://www.i18next.com/) New
+- [i18n internationalization/tradução da aplicação PTBR/EN](https://www.i18next.com/) New
 
 
 ## :white_check_mark: Pré requisitos ##
