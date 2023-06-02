@@ -1,4 +1,4 @@
-import {useContext} from 'react';
+import { useContext } from 'react';
 import Input from '../Forms/Input';
 import Button from '../Forms/Button';
 import Error from '../Helper/Error';
@@ -7,8 +7,10 @@ import { USER_POST } from '../../Api';
 import { UserContext } from '../../UserContext';
 import useFetch from '../../Hooks/useFetch';
 import Head from '../Helper/Head';
+import { useTranslation } from 'react-i18next';
 
 const LoginCreate = () => {
+  const { t } = useTranslation();
   const username = useForm();
   const email = useForm('email');
   const password = useForm();
@@ -30,15 +32,25 @@ const LoginCreate = () => {
   return (
     <section className="animeLeft">
       <Head title="crie sua conta" />
-      <h1 className="title">Cadastre-se</h1>
+      <h1 className="title">{t('getStarted')}</h1>
       <form onSubmit={handleSubmit}>
-        <Input label="Usuário" type="text" name="username" {...username} />
-        <Input label="Email" type="email" name="email" {...email} />
-        <Input label="Senha" type="password" name="password" {...password} />
+        <Input
+          label={t('username')}
+          type="text"
+          name="username"
+          {...username}
+        />
+        <Input label={t('email')} type="email" name="email" {...email} />
+        <Input
+          label={t('password')}
+          type="password"
+          name="password"
+          {...password}
+        />
         {loading ? (
           <Button disabled>Cadastrando...</Button>
         ) : (
-          <Button>Cadastrar</Button>
+          <Button>{t('register')}</Button>
         )}
         <Error error={error} />
       </form>

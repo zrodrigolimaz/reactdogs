@@ -8,6 +8,7 @@ import Error from '../Helper/Error';
 import { PHOTO_POST } from '../../Api';
 import { useNavigate } from 'react-router-dom';
 import Head from '../Helper/Head';
+import { useTranslation } from 'react-i18next';
 
 const UserPhotoPost = () => {
   const nome = useForm();
@@ -16,6 +17,7 @@ const UserPhotoPost = () => {
   const [img, setImg] = React.useState({});
   const { data, error, loading, request } = useFetch();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   React.useEffect(() => {
     if (data) navigate('/conta');
@@ -43,22 +45,26 @@ const UserPhotoPost = () => {
 
   return (
     <section className={`${styles.photoPost} animeLeft`}>
-      <Head title="Poste sua foto" />
+      <Head title={t('postYourPhoto')} />
       <form onSubmit={handleSubmit}>
-        <Input label="Nome" type="text" name="nome" {...nome} />
-        <Input label="Peso" type="number" name="peso" {...peso} />
-        <Input label="Idade" type="number" name="idade" {...idade} />
-        <input
-          className={styles.file}
-          type="file"
-          name="img"
-          id="img"
-          onChange={handleImgChange}
-        />
+        <Input label={t('name')} type="text" name="nome" {...nome} />
+        <Input label={t('weight')} type="number" name="peso" {...peso} />
+        <Input label={t('age')} type="number" name="idade" {...idade} />
+        <label htmlFor="img" className={styles.uploadButton}>
+          {t('uploadImage')}
+          <input
+            className={styles.file}
+            type="file"
+            name="img"
+            id="img"
+            onChange={handleImgChange}
+            style={{ display: 'none' }}
+          />
+        </label>
         {loading ? (
-          <Button disabled>Enviando...</Button>
+          <Button disabled>{t('sending...')}</Button>
         ) : (
-          <Button>Enviar</Button>
+          <Button>{t('send')}</Button>
         )}
         <Error error={error} />
       </form>
