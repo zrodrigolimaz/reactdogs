@@ -1,13 +1,15 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { ReactComponent as Enviar } from '../../Assets/enviar.svg';
 import useFetch from '../../Hooks/useFetch';
 import Error from '../Helper/Error';
 import { COMMENT_POST } from '../../Api';
 import styles from './PhotoCommentsForm.module.css';
+import { useTranslation } from 'react-i18next';
 
 const PhotoCommentsForm = ({ id, setComments, single }) => {
   const [comment, setComment] = useState('');
   const { request, error } = useFetch();
+  const { t } = useTranslation();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -28,7 +30,7 @@ const PhotoCommentsForm = ({ id, setComments, single }) => {
         className={styles.textarea}
         id="comment"
         name="comment"
-        placeholder="Comente..."
+        placeholder={t('comment...')}
         value={comment}
         onChange={({ target }) => setComment(target.value)}
       />

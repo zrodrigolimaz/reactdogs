@@ -1,3 +1,36 @@
 {
-  "login": "login / Criar"
+  "login": "login / Register",
+  "username": "Usuário",
+  "password": "Senha",
+  "email": "Email",
+  "signin": "Entrar",
+  "forgotPassword": "Perdeu a senha?",
+  "signUp": "Cadastro",
+  "notHaveAccount": "Ainda não possui conta? Cadastre-se no site.",
+  "register": "Cadastro",
+  "rightsReserved": "Dogs. Alguns direitos reservados.",
+
+  "getStarted": "Cadastre-se",
+  "email/user": "Email ou usuário",
+  "sending...": "Enviando...",
+  "sendEmail": "Enviar email",
+  "errorValue": "Por favor digite um valor.",
+  "validEmail": "Por favor, insira um endereço de email válido.",
+
+  "myAccount": "Minha Conta",
+  "postYourPhoto": "Poste Sua Foto",
+  "statistics": "Estatísticas",
+
+  "year": "Ano",
+  "years": "Anos",
+
+  "name": "Nome*",
+  "weight": "Peso*",
+  "age": "Idade*",
+  "send": "Enviar",
+
+  "uploadImage": "Carregar imagem*",
+
+  "comment...": "Comente...",
+  "delete": "Deletar"
 }

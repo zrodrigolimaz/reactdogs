@@ -1,23 +1,25 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import UserHeaderNav from './UserHeaderNav';
 import styles from './UserHeader.module.css';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const UserHeader = () => {
-  const [title, setTitle] = React.useState('');
+  const [title, setTitle] = useState('');
   const location = useLocation();
+  const { t } = useTranslation();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const { pathname } = location;
     switch (pathname) {
       case '/conta/postar':
-        setTitle('Poste Sua Foto');
+        setTitle(t('postYourPhoto'));
         break;
       case '/conta/estatisticas':
-        setTitle('Estatísticas');
+        setTitle(t('statistics'));
         break;
       default:
-        setTitle('Minha Conta');
+        setTitle(t('myAccount'));
     }
   }, [location]);
 

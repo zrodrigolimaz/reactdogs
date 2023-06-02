@@ -5,10 +5,12 @@ import useFetch from '../../Hooks/useFetch';
 import { PASSWORD_LOST } from '../../Api';
 import Error from '../Helper/Error';
 import Head from '../Helper/Head';
+import { useTranslation } from 'react-i18next';
 
 const LoginPasswordLost = () => {
   const login = useForm();
   const { data, loading, error, request } = useFetch();
+  const { t } = useTranslation();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -25,16 +27,16 @@ const LoginPasswordLost = () => {
   return (
     <section className="animeLeft">
       <Head title="perdeu a senha" />
-      <h1 className="title">Perdeu a senha?</h1>
+      <h1 className="title">{t('forgotpassword')}</h1>
       {data ? (
         <p style={{ color: '#4c1' }}>{data}</p>
       ) : (
         <form onSubmit={handleSubmit}>
-          <Input label="Email / Usuário" type="text" name="login" {...login} />
+          <Input label={t('email/user')} type="text" name="login" {...login} />
           {loading ? (
-            <Button disabled>Enviando...</Button>
+            <Button disabled>{t('sending...')}</Button>
           ) : (
-            <Button>Enviar Email</Button>
+            <Button>{t('sendEmail')}</Button>
           )}
         </form>
       )}

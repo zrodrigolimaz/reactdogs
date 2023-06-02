@@ -5,11 +5,12 @@ import PhotoComments from './PhotoComments';
 import { UserContext } from '../../UserContext';
 import PhotoDelete from './PhotoDelete';
 import Image from '../Helper/Image';
+import { useTranslation } from 'react-i18next';
 
 const PhotoContent = ({ data, single }) => {
   const user = useContext(UserContext);
   const { photo, comments } = data;
-
+  const { t } = useTranslation();
   return (
     <div className={`${styles.photo} ${single ? styles.single : ''}`}>
       <div className={styles.img}>
@@ -31,7 +32,7 @@ const PhotoContent = ({ data, single }) => {
           <ul className={styles.attributes}>
             <li>{photo.peso} kg</li>
             <li>
-              {photo.idade} {photo.idade == 1 ? 'ano' : 'anos'}
+              {photo.idade} {photo.idade == 1 ? t('year') : t('years')}
             </li>
           </ul>
         </div>

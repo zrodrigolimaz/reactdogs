@@ -12,6 +12,7 @@ import Photo from './components/Photo/Photo';
 import NotFound from './components/NotFound';
 
 import UserProfile from './components/User/UserProfile';
+import LanguageSelector from './components/Helper/LanguageSelector';
 
 const App = () => {
   return (
@@ -19,6 +20,8 @@ const App = () => {
       <BrowserRouter>
         <UserStorage>
           <Header />
+          <LanguageSelector />
+
           <main className="AppBody">
             <Routes>
               <Route path="/" element={<Home />} />

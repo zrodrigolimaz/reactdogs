@@ -1,4 +1,4 @@
-import {useContext} from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Input from '../Forms/Input';
 import Button from '../Forms/Button';
@@ -8,10 +8,12 @@ import Error from '../Helper/Error';
 import styles from './LoginForm.module.css';
 import stylesBtn from '../Forms/Button.module.scss';
 import Head from '../Helper/Head';
+import { useTranslation } from 'react-i18next';
 
 const LoginForm = () => {
   const username = useForm();
   const password = useForm();
+  const { t } = useTranslation();
 
   const { userLogin, error, loading } = useContext(UserContext);
 
@@ -28,23 +30,33 @@ const LoginForm = () => {
       <Head title="Login" />
       <h1 className="title">Login</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <Input label="Usuário" type="text" name="username" {...username} />
-        <Input label="Senha" type="password" name="password" {...password} />
+        <Input
+          label={t('username')}
+          type="text"
+          name="username"
+          {...username}
+        />
+        <Input
+          label={t('password')}
+          type="password"
+          name="password"
+          {...password}
+        />
         {loading ? (
           <Button disabled>Carregando...</Button>
         ) : (
-          <Button>Entrar</Button>
+          <Button>{t('signin')}</Button>
         )}
         <Error error={error && 'Dados incorretos'} />
       </form>
       <Link className={styles.perdeu} to="/login/perdeu">
-        Perdeu a Senha?
+        {t('forgotPassword')}
       </Link>
       <div className={styles.cadastro}>
-        <h2 className={styles.subtitle}>Cadastre-se</h2>
-        <p>Ainda não possui conta? Cadastre-se no site.</p>
+        <h2 className={styles.subtitle}>{t('signUp')}</h2>
+        <p>{t('notHaveAccount')}</p>
         <Link className={stylesBtn.button} to="/login/criar">
-          Cadastro
+          {t('register')}
         </Link>
       </div>
     </section>

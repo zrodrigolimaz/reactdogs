@@ -1,29 +1,31 @@
-import {useState} from 'react';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const types = {
   email: {
     regex:
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-    message: 'Preencha um email válido',
+    message: 'validEmail',
   },
   password: {
     regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
-    message:
-      'A senha precisa ter 1 caracter maíusculo, 1 minúsculo e 1 digito. Com no mínimo 8 caracteres.',
+    message: 'Digite uma senha',
   },
 };
 
 const useForm = (type) => {
+  const { t } = useTranslation();
   const [value, setValue] = useState('');
   const [error, setError] = useState(null);
+  const emailError = t(types.email.message);
 
   function validate(value) {
     if (type === false) return true;
     if (value.length === 0) {
-      setError('Preencha um valor.');
+      setError(t('errorValue'));
       return false;
     } else if (types[type] && !types[type].regex.test(value)) {
-      setError(types[type].message);
+      setError(t(types[type].message));
       return false;
     } else {
       setError(null);
