@@ -42,6 +42,7 @@ Com a integração de uma API REST, ela permite que os usuários compartilhem e 
 - ✔️ Estatísticas de visualizações com um dashboard: Acompanhe o engajamento e alcance de seus posts por meio de nossas estatísticas detalhadas.
 - ✔️ Delete de fotos: Você tem total controle sobre suas postagens e pode excluí-las quando quiser.
 - ✔️ Recuperar senha: Caso esqueça sua senha, nós facilitamos a recuperação da mesma.
+- ✔️ Versão em dois idiomas: Português e Inglês.
 
 ## :rocket: Tecnologias ##
 
